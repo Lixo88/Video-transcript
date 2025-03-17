@@ -1,81 +1,101 @@
-﻿import speech_recognition as sr
+﻿import os
+import concurrent.futures
+import speech_recognition as sr
 from pydub import AudioSegment
-import sys
-import os
 
-# Definir la carpeta de salida
-output_folder = r"C:\Users\pablo\Documents\Inti Kamari\Videos Spa\Audios"
+# Define input and output folder
+input_folder = r"C:\Users\pablo\Documents\Inti Kamari\Videos Spa\Audios"
+output_folder = input_folder  # Save the files in the same folder
 
-# Asegurar que se pasa un archivo como argumento
-if len(sys.argv) < 2:
-    print("Uso: python transcriber.py archivo.mp3")
-    sys.exit(1)
+# Set the correct FFmpeg path
+AudioSegment.converter = r"C:\ffmpeg-2025-03-17-git-5b9356f18e-essentials_build\ffmpeg-2025-03-17-git-5b9356f18e-essentials_build\bin\ffmpeg.exe"
+print(f"FFmpeg configured at: {AudioSegment.converter}")
 
-# Obtener el nombre del archivo desde la línea de comandos
-audio_file = sys.argv[1]
-
-# Verificar si el archivo existe
-if not os.path.exists(audio_file):
-    print(f"Error: No se encontró el archivo {audio_file}")
-    sys.exit(1)
-
-print(f"Archivo encontrado: {audio_file}")
-
-# Obtener el nombre base del archivo (sin ruta)
-base_name = os.path.splitext(os.path.basename(audio_file))[0]
-
-# Convertir a WAV si no está en ese formato
-wav_file = os.path.join(output_folder, base_name + ".wav")
-print("Convirtiendo archivo a formato WAV...")
-try:
-    audio = AudioSegment.from_file(audio_file)
-    audio.export(wav_file, format="wav")
-    print(f"Archivo convertido: {wav_file}")
-except Exception as e:
-    print(f"Error al convertir el archivo: {e}")
-    sys.exit(1)
-
-# Verificar si el archivo WAV fue creado
-if not os.path.exists(wav_file):
-    print(f"Error: No se generó el archivo WAV en {wav_file}")
-    sys.exit(1)
-
-# Inicializar el reconocedor
-recognizer = sr.Recognizer()
-
-# Cargar el archivo de audio
-try:
-    with sr.AudioFile(wav_file) as source:
-        print("Procesando audio...")
-        audio_data = recognizer.record(source)  # Leer el audio completo
-        print("Audio cargado exitosamente.")
-except Exception as e:
-    print(f"Error al cargar el archivo de audio: {e}")
-    sys.exit(1)
-
-# Intentar transcribir el audio
-try:
-    print("Iniciando transcripción...")
-    transcription = recognizer.recognize_google(audio_data, language="es-ES")
+def process_file(file):
+    # Normalize the file name to avoid issues with special characters
+    safe_file = (file.replace(" ", "_")
+                   .replace("(", "")
+                   .replace(")", "")
+                   .replace("á", "a")
+                   .replace("é", "e")
+                   .replace("í", "i")
+                   .replace("ó", "o")
+                   .replace("ú", "u"))
+    
+    audio_file = os.path.abspath(os.path.join(input_folder, file))
+    base_name = os.path.splitext(safe_file)[0]
+    wav_file = os.path.join(output_folder, base_name + ".wav")
     output_file = os.path.join(output_folder, base_name + ".txt")
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(transcription)
-    print(f"Transcripción completada. Guardado en: {output_file}")
-except sr.UnknownValueError:
-    print("No se pudo transcribir el audio (audio no reconocido).")
-except sr.RequestError:
-    print("Error al conectar con el servicio de reconocimiento de voz.")
-except Exception as e:
-    print(f"Error inesperado: {e}")
+    
+    print(f"\nProcessing: {file}")
+    print(f"Full path: {audio_file}")
 
-# Verificar si el archivo de transcripción se generó correctamente
-if not os.path.exists(output_file):
-    print(f"Error: No se generó el archivo de transcripción en {output_file}")
-    sys.exit(1)
+    if not os.path.exists(audio_file):
+        print(f"Error: File does not exist at {audio_file}")
+        return
 
-# Eliminar archivo temporal WAV
-try:
-    os.remove(wav_file)
-    print("Archivo temporal eliminado.")
-except Exception as e:
-    print(f"Error al eliminar archivo temporal: {e}")
+    # Attempt to open the file with Pydub
+    try:
+        print(f"Trying to open file with Pydub: {audio_file}")
+        audio = AudioSegment.from_file(audio_file)
+        print(f"Detected format: {audio.channels} channels, {audio.frame_rate} Hz, {audio.sample_width} bytes per sample")
+    except Exception as e:
+        print(f"Error reading file {file}: {e}")
+        return
+
+    # Convert MP3 to WAV
+    try:
+        audio.export(wav_file, format="wav")
+        print(f"Converted file: {wav_file}")
+    except Exception as e:
+        print(f"Error converting {file}: {e}")
+        return
+
+    # Initialize the recognizer and load the WAV file
+    recognizer = sr.Recognizer()
+    try:
+        with sr.AudioFile(wav_file) as source:
+            print("Processing audio...")
+            audio_data = recognizer.record(source)
+    except Exception as e:
+        print(f"Error loading {file}: {e}")
+        return
+
+    # Attempt to transcribe the audio using Google Speech Recognition (Spanish)
+    try:
+        print("Starting transcription...")
+        transcription = recognizer.recognize_google(audio_data, language="es-ES")
+        with open(output_file, "w", encoding="utf-8") as f:
+            f.write(transcription)
+        print(f"Transcription completed. Saved in: {output_file}")
+    except sr.UnknownValueError:
+        print(f"Could not transcribe {file} (audio not recognized).")
+    except sr.RequestError:
+        print("Error connecting to the speech recognition service.")
+    except Exception as e:
+        print(f"Unexpected error in {file}: {e}")
+
+    # Remove the temporary WAV file
+    try:
+        os.remove(wav_file)
+        print("Temporary file removed.")
+    except Exception as e:
+        print(f"Error deleting temporary file for {file}: {e}")
+
+def main():
+    # Get all MP3 files in the input folder
+    files = [f for f in os.listdir(input_folder) if f.lower().endswith(".mp3")]
+    if not files:
+        print("No MP3 files found in the folder.")
+        return
+
+    print(f"Files found: {len(files)}")
+
+    # Process files concurrently using a ThreadPoolExecutor.
+    # You can adjust max_workers if needed.
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
+        futures = [executor.submit(process_file, file) for file in files]
+        concurrent.futures.wait(futures)
+
+if __name__ == "__main__":
+    main()

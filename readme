@@ -1,0 +1,9 @@
+﻿Concurrency:
+The script now uses ThreadPoolExecutor to process multiple files simultaneously. Adjust the max_workers value to balance between speed and the load you put on your system and the Google API.
+
+Structure:
+Each file is processed in the process_file function. This includes reading, converting, transcribing, and cleaning up the temporary WAV file.
+
+Error Handling:
+The code continues to handle errors on a per-file basis so that one file’s failure won’t stop the entire batch.
+
