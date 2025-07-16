@@ -1,0 +1,366 @@
+2025-05-29 18:30:36,495 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 18:30:36,495 [INFO] Transcribiendo: 2 Revisar lo manchado.mp3
+2025-05-29 18:30:36,496 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:30:36,496 [INFO] Transcribiendo: 5 Armado de camas.mp3
+2025-05-29 18:30:36,496 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:30:36,496 [INFO] Transcribiendo: 6 Superficies.mp3
+2025-05-29 18:30:36,497 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:30:36,497 [WARNING] Intento 1 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:36,497 [WARNING] Intento 1 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:36,497 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:30:36,498 [WARNING] Intento 1 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:36,498 [WARNING] Intento 1 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:38,499 [WARNING] Intento 2 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:38,499 [WARNING] Intento 2 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:38,499 [WARNING] Intento 2 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:38,500 [WARNING] Intento 2 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,501 [WARNING] Intento 3 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,502 [ERROR] Error al transcribir 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,515 [WARNING] Intento 3 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,515 [WARNING] Intento 3 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,516 [WARNING] Intento 3 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,516 [ERROR] Error al transcribir 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,517 [ERROR] Error al transcribir 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:30:42,518 [ERROR] Error al transcribir 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:51,852 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 18:34:51,853 [INFO] Transcribiendo: 2 Revisar lo manchado.mp3
+2025-05-29 18:34:51,853 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:34:51,853 [INFO] Transcribiendo: 5 Armado de camas.mp3
+2025-05-29 18:34:51,854 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:34:51,854 [INFO] Transcribiendo: 6 Superficies.mp3
+2025-05-29 18:34:51,854 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:34:51,854 [WARNING] Intento 1 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:51,854 [INFO] Usando Whisper API para transcribir.
+2025-05-29 18:34:51,854 [WARNING] Intento 1 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:51,855 [WARNING] Intento 1 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:51,855 [WARNING] Intento 1 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:53,856 [WARNING] Intento 2 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:53,857 [WARNING] Intento 2 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:53,857 [WARNING] Intento 2 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:53,857 [WARNING] Intento 2 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,860 [WARNING] Intento 3 fallido para 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,861 [WARNING] Intento 3 fallido para 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,861 [WARNING] Intento 3 fallido para 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,861 [ERROR] Error al transcribir 1 Retirar lo usado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,862 [WARNING] Intento 3 fallido para 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,862 [ERROR] Error al transcribir 6 Superficies.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,863 [ERROR] Error al transcribir 5 Armado de camas.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:34:57,864 [ERROR] Error al transcribir 2 Revisar lo manchado.mp3: 
+
+You tried to access openai.Audio, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-05-29 18:55:24,365 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 18:55:24,367 [INFO] Transcribiendo: 2 Revisar lo manchado.mp3
+2025-05-29 18:55:24,368 [INFO] Transcribiendo: 5 Armado de camas.mp3
+2025-05-29 18:55:24,368 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:55:24,368 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:55:24,369 [INFO] Transcribiendo: 6 Superficies.mp3
+2025-05-29 18:55:24,369 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:55:24,371 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:55:37,624 [ERROR] Error al transcribir 5 Armado de camas.mp3: Linear(in_features=512, out_features=512, bias=True)
+2025-05-29 18:55:37,809 [ERROR] Error al transcribir 2 Revisar lo manchado.mp3: Linear(in_features=512, out_features=512, bias=True)
+2025-05-29 18:55:37,954 [ERROR] Error al transcribir 1 Retirar lo usado.mp3: cannot reshape tensor of 0 elements into shape [1, 0, 8, -1] because the unspecified dimension size -1 can be any value and is ambiguous
+2025-05-29 18:55:50,316 [INFO] Guardado: 6_Superficies.txt
+2025-05-29 18:59:16,587 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 18:59:16,587 [INFO] Transcribiendo: 2 Revisar lo manchado.mp3
+2025-05-29 18:59:16,587 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:59:16,588 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:59:16,588 [INFO] Transcribiendo: 5 Armado de camas.mp3
+2025-05-29 18:59:16,588 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 18:59:21,481 [ERROR] Error al transcribir 1 Retirar lo usado.mp3: cannot reshape tensor of 0 elements into shape [1, 0, 8, -1] because the unspecified dimension size -1 can be any value and is ambiguous
+2025-05-29 18:59:21,798 [ERROR] Error al transcribir 2 Revisar lo manchado.mp3: cannot reshape tensor of 0 elements into shape [1, 0, 8, -1] because the unspecified dimension size -1 can be any value and is ambiguous
+2025-05-29 19:00:21,078 [INFO] Guardado: 5_Armado_de_camas.txt
+2025-05-29 19:04:31,439 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 19:04:31,439 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 19:04:31,440 [INFO] Transcribiendo: 2 Revisar lo manchado.mp3
+2025-05-29 19:04:31,441 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 19:04:34,566 [ERROR] Error al transcribir 1 Retirar lo usado.mp3: cannot reshape tensor of 0 elements into shape [1, 0, 8, -1] because the unspecified dimension size -1 can be any value and is ambiguous
+2025-05-29 19:04:41,667 [INFO] Guardado: 2_Revisar_lo_manchado.txt
+2025-05-29 19:05:02,676 [INFO] Transcribiendo: 1 Retirar lo usado.mp3
+2025-05-29 19:05:02,676 [INFO] Usando Whisper LOCAL para transcribir.
+2025-05-29 19:05:09,986 [INFO] Guardado: 1_Retirar_lo_usado.txt

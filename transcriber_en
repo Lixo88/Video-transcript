@@ -1,0 +1,122 @@
+﻿import os
+import math
+import concurrent.futures
+import speech_recognition as sr
+from pydub import AudioSegment
+
+# ——— CONFIG ———
+INPUT_FOLDER   = r"C:\Users\pablo\Videos\Grabaciones de pantalla"
+OUTPUT_FOLDER  = INPUT_FOLDER  # or set a separate path
+FFMPEG_PATH    = r"C:\ffmpeg-2025-03-17-git-5b9356f18e-essentials_build\bin\ffmpeg.exe"
+CHUNK_LENGTH_MS = 60 * 1000   # 60 seconds per chunk
+
+# configure ffmpeg
+if os.path.exists(FFMPEG_PATH):
+    AudioSegment.converter = FFMPEG_PATH
+else:
+    print(f"[WARN] ffmpeg not found at {FFMPEG_PATH}, falling back to 'ffmpeg' in PATH.")
+    AudioSegment.converter = "ffmpeg"
+
+print(f"FFmpeg configured at: {AudioSegment.converter!r}")
+
+def normalize_filename(name: str) -> str:
+    return (name.replace(" ", "_")
+                .replace("(", "")
+                .replace(")", "")
+                .translate(str.maketrans("áéíóúÁÉÍÓÚ",
+                                         "aeiouAEIOU")))
+
+def process_file(file: str):
+    try:
+        print(f"[DEBUG] process_file() ➞ {file}", flush=True)
+
+        # build paths
+        src_path  = os.path.join(INPUT_FOLDER, file)
+        safe_name = normalize_filename(file)
+        base      = os.path.splitext(safe_name)[0]
+        wav_path  = os.path.join(OUTPUT_FOLDER, base + ".wav")
+        txt_path  = os.path.join(OUTPUT_FOLDER, base + ".txt")
+
+        # sanity check input
+        print(f"[CHECK] exists? {os.path.exists(src_path)} {repr(src_path)}", flush=True)
+        if not os.path.isfile(src_path):
+            print(f"[ERROR] missing file: {src_path}", flush=True)
+            return
+
+        # load & convert to WAV (mono, 16 kHz)
+        audio = AudioSegment.from_file(src_path)
+        audio = audio.set_frame_rate(16000).set_channels(1)
+        audio.export(wav_path, format="wav")
+        print(f"[OK] Converted to WAV: {wav_path}", flush=True)
+
+        recognizer = sr.Recognizer()
+        with sr.AudioFile(wav_path) as source:
+            recognizer.adjust_for_ambient_noise(source, duration=1)
+
+        total_ms  = len(audio)
+        n_chunks  = math.ceil(total_ms / CHUNK_LENGTH_MS)
+        print(f"Total duration: {total_ms/1000:.1f}s → {n_chunks} chunks", flush=True)
+
+        # fresh transcript file
+        open(txt_path, "w", encoding="utf-8").close()
+
+        # process each chunk
+        for i in range(n_chunks):
+            start_ms    = i * CHUNK_LENGTH_MS
+            duration_ms = min(CHUNK_LENGTH_MS, total_ms - start_ms)
+            print(f"  → chunk {i+1}/{n_chunks}: "
+                  f"{start_ms/1000:.1f}s–{(start_ms+duration_ms)/1000:.1f}s",
+                  flush=True)
+
+            with sr.AudioFile(wav_path) as source:
+                audio_segment = recognizer.record(
+                    source,
+                    offset=start_ms/1000.0,
+                    duration=duration_ms/1000.0
+                )
+
+            try:
+                seg_txt = recognizer.recognize_google(audio_segment,
+                                                      language="en-US")
+            except sr.UnknownValueError:
+                seg_txt = "[Unrecognizable audio]"
+            except sr.RequestError as e:
+                seg_txt = f"[API error: {e}]"
+
+            # append to transcript
+            with open(txt_path, "a", encoding="utf-8") as f:
+                header = f"\n\n--- Chunk {i+1} ({start_ms/1000:.1f}s) ---\n"
+                f.write(header + seg_txt)
+
+    except Exception as e:
+        print(f"[ERROR] in process_file({file}): {e}", flush=True)
+
+    finally:
+        # clean up WAV
+        if 'wav_path' in locals() and os.path.exists(wav_path):
+            try:
+                os.remove(wav_path)
+            except Exception as e:
+                print(f"[WARN] could not delete temp WAV: {e}", flush=True)
+        # final transcript notification
+        if 'txt_path' in locals() and os.path.exists(txt_path):
+            print(f"[DONE] Transcript saved to: {txt_path}", flush=True)
+
+def main():
+    # pick up MP3, MP4, M4A, WAV
+    media = [f for f in os.listdir(INPUT_FOLDER)
+             if f.lower().endswith((".mp3", ".mp4", ".m4a", ".wav"))]
+    print("Media list:", media)
+    if not media:
+        print("No media files found.")
+        return
+
+    print(f"Found {len(media)} file(s); processing with 4 threads.")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as exec:
+        exec.map(process_file, media)
+
+    print("Output folder now contains:", os.listdir(OUTPUT_FOLDER))
+
+if __name__ == "__main__":
+    main()
+x

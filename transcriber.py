@@ -4,7 +4,7 @@ import speech_recognition as sr
 from pydub import AudioSegment
 
 # Define input and output folder
-input_folder = r"C:\Users\pablo\Documents\Inti Kamari\Videos Spa\Audios"
+input_folder = r"C:\Users\pablo\Downloads\asd"
 output_folder = input_folder  # Save the files in the same folder
 
 # Set the correct FFmpeg path
@@ -64,7 +64,7 @@ def process_file(file):
     # Attempt to transcribe the audio using Google Speech Recognition (Spanish)
     try:
         print("Starting transcription...")
-        transcription = recognizer.recognize_google(audio_data, language="es-ES")
+        transcription = recognizer.recognize_google(audio_data, language="en-EN")
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(transcription)
         print(f"Transcription completed. Saved in: {output_file}")
